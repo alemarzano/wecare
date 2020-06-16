@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Lucas";
-  src: url("fonts/nespressolucas-bold-webfont.woff2") format("woff2"), url("fonts/nespressolucas-bold-webfont.woff") format("woff");
+  src: url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-Bold.woff") format("woff"), url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-Bold.woff") format("woff");
   font-weight: bold;
   font-style: bold;
 }
 
 @font-face {
   font-family: "Lucas";
-  src: url("fonts/nespressolucas-regular-webfont.woff2") format("woff2"), url("fonts/nespressolucas-regular-webfont.woff") format("woff");
+  src: url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-Regular.woff") format("woff"), url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lucas";
-  src: url("fonts/NespressoLucas-XtraBd.woff2") format("woff2"), url("fonts/NespressoLucas-XtraBd.woff") format("woff");
+  src: url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-XtraBd.woff") format("woff"), url("https://www.nespresso.com/shared_res/agility/commons/fonts/NespressoLucas-XtraBd.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
@@ -57,14 +57,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 18px;
   /* height: 100vh; */
 }
 
 .filters {
-  position: fixed;
+  position: absolute;
   left: 0px;
-  top: 0px;
+  top: -32px;
   right: 0px;
   bottom: 0px;
   z-index: -1;
@@ -79,15 +81,17 @@ body {
 @media (min-width: 601px) {
   .filters {
     -webkit-background-size: cover;
-    background-image: url("../img/bg2020-desk.jpg");
+    background-image: url("https://www.nespresso.com/ecom/medias/sys_master/public/13400999591966/bg2020-desk.jpg?");
     background-attachment: fixed;
   }
 }
 
 @media (max-width: 600px) {
   .filters {
-    background-image: url("../img/bg2020-mobile.jpg");
+    background-image: url("https://www.nespresso.com/ecom/medias/sys_master/public/13400999919646/bg2020-mobile.jpg?");
     background-attachment: scroll;
+    position: fixed;
+    top: 0;
   }
 }
 
@@ -138,6 +142,7 @@ section {
   font-weight: normal;
   text-shadow: 4px 6px 8px #000000;
   padding-bottom: 32px;
+  line-height: 120%;
 }
 
 .header .titulo h1 strong {
@@ -164,7 +169,7 @@ section {
   content: '';
   display: block;
   height: 4px;
-  min-width: 45vw;
+  min-width: 45%;
 }
 
 .separador::before {
@@ -211,6 +216,7 @@ section {
 .prensa {
   margin-top: 32px;
   padding: 0;
+  padding-bottom: 80px;
 }
 
 .prensa * {
@@ -222,7 +228,7 @@ section {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(1.4px);
           backdrop-filter: blur(1.4px);
   padding-bottom: 32px;
@@ -311,7 +317,6 @@ section {
 .prensa .border p:nth-child(2) {
   margin-top: 32px;
   font-size: 1.4em;
-  line-height: .5em;
   font-weight: bold;
 }
 
@@ -402,6 +407,9 @@ section {
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
   /* Styles */
+  .free-html {
+    font-size: 14px;
+  }
   section {
     padding-left: 5vw;
     padding-right: 5vw;
@@ -413,24 +421,30 @@ section {
     height: 320px;
   }
   .prensa .text p:nth-child(1) {
-    font-size: 2em;
+    font-size: 2.4em;
+    max-width: 70%;
+    margin: auto;
   }
   .prensa .text ul {
+    min-height: 280px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
   }
   .prensa .text ul li {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 32%;
-            flex: 1 1 32%;
+    width: 32%;
+    padding: 0 16px;
+  }
+  .prensa .text ul li * {
+    max-width: 100%;
   }
   .prensa .text ul li span.img {
     font-size: 3em;

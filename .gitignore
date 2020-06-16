@@ -3,3 +3,5 @@ sass
 .vscode
 *.pdf
 parallax.html
+index-links.html
+js/basicscroll.js
